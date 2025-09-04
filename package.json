@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Suryansh's Portfolio Website",
   "scripts": {
-    "build": "cd Public/Frontend && npm install && npm run build",
-    "dev": "cd Public/Frontend && npm run dev"
+    "build": "npm install && npm run build",
+    "dev": "npm run dev"
   },
   "keywords": ["portfolio", "react", "vite"],
   "author": "Suryansh",
