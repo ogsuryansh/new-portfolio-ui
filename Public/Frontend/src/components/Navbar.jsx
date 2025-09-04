@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
+import logo from '../assets/images/main_logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const logo = './src/assets/images/main_logo.png';
 
 
 

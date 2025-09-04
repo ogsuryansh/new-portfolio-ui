@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import logo from '../assets/images/main_logo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -19,7 +20,7 @@ const Footer = () => {
           <div className="footer-main">
             <div className="footer-brand">
               <div className="footer-logo">
-                <img src="./src/assets/images/main_logo.png" alt="logo" />
+                <img src={logo} alt="logo" />
               </div>
               <h3 className="brand-name">Portfolio</h3>
               <p className="brand-tagline">

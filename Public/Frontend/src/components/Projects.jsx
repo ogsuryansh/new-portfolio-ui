@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Projects.css';
+import gamingGarageImg from '../assets/images/gamingGarage.png';
+import glassMusicImg from '../assets/images/glassmusic.png';
+import acadmixImg from '../assets/images/acadmix.png';
 
 const Projects = () => {
   const projects = [
@@ -8,7 +11,7 @@ const Projects = () => {
       title: "Key Selling Ecommerce Site",
       description: "Admin panel with key management full stack web developed in 3 days. Complete e-commerce solution with modern UI and secure key management system.",
       technologies: ["React", "Node.js", "MongoDB", "Express", "Admin Panel"],
-      image: "./src/assets/images/gamingGarage.png",
+      image: gamingGarageImg,
       liveUrl: "https://gaminggarage.store/",
       githubUrl: "https://github.com/ogsuryansh/manyhack-pannel",
       featured: true
@@ -17,7 +20,7 @@ const Projects = () => {
       title: "Glass Music",
       description: "A personal website to listen free music without any ads or anything made using YouTube API with fallback as Spotify with clean and modern UI.",
       technologies: ["React", "YouTube API", "Spotify API", "JavaScript", "Modern UI"],
-      image: "./src/assets/images/glassmusic.png",
+      image: glassMusicImg,
       liveUrl: "https://glassmusic.fun/",
       githubUrl: "https://github.com/ogsuryansh/web-music-player",
       featured: false
@@ -26,7 +29,7 @@ const Projects = () => {
       title: "Acadmix",
       description: "A web platform for selling book notes and tests via online server including admin panel to manage all books, tests, payments, and users. Features manual admin approval payment method with dynamic payment QR and link generation.",
       technologies: ["MERN Stack", "JWT Auth", "Google OAuth", "UPI Payment", "Admin Panel"],
-      image: "./src/assets/images/acadmix.png",
+      image: acadmixImg,
       liveUrl: "https://acadmix.shop/",
       githubUrl: "https://github.com/ogsuryansh/acadmix",
       featured: false

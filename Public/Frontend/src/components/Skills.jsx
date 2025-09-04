@@ -1,23 +1,30 @@
 import React from 'react';
 import './Skills.css';
+import reactIcon from '../assets/images/react.png';
+import jsIcon from '../assets/images/js.png';
+import htmlIcon from '../assets/images/html.png';
+import cssIcon from '../assets/images/css.png';
+import nodeIcon from '../assets/images/node js.png';
+import expressIcon from '../assets/images/Express.png';
+import pythonIcon from '../assets/images/python.png';
 
 const Skills = () => {
   const skillCategories = [
     {
       title: "Frontend Development",
       skills: [
-        { name: "React", level: 90, icon: "./src/assets/images/react.png" },
-        { name: "JavaScript", level: 88, icon: "./src/assets/images/js.png" },
-        { name: "HTML5", level: 95, icon: "./src/assets/images/html.png" },
-        { name: "CSS3", level: 92, icon: "./src/assets/images/css.png" }
+        { name: "React", level: 90, icon: reactIcon },
+        { name: "JavaScript", level: 88, icon: jsIcon },
+        { name: "HTML5", level: 95, icon: htmlIcon },
+        { name: "CSS3", level: 92, icon: cssIcon }
       ]
     },
     {
       title: "Backend & Languages",
       skills: [
-        { name: "Node.js", level: 85, icon: "./src/assets/images/node js.png" },
-        { name: "Express.js", level: 80, icon: "./src/assets/images/Express.png" },
-        { name: "Python", level: 82, icon: "./src/assets/images/python.png" },
+        { name: "Node.js", level: 85, icon: nodeIcon },
+        { name: "Express.js", level: 80, icon: expressIcon },
+        { name: "Python", level: 82, icon: pythonIcon },
         { name: "C++", level: 10, icon: "⚡" }
       ]
     }
