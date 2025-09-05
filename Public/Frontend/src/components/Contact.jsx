@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG, EMAIL_TEMPLATE_PARAMS } from '../config/emailjs';
 import './Contact.css';
 
 const Contact = () => {
@@ -8,6 +10,8 @@ const Contact = () => {
     message: ''
   });
   const [showSuccess, setShowSuccess] = useState(false);
+  const [showError, setShowError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [focusedField, setFocusedField] = useState(null);
   const [isTyping, setIsTyping] = useState(false);
 
@@ -28,12 +32,46 @@ const Contact = () => {
     setFocusedField(null);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setFormData({ name: '', email: '', message: '' });
-    setShowSuccess(true);
-    setTimeout(() => setShowSuccess(false), 4000);
+    setIsLoading(true);
+    setShowError(false);
+    setShowSuccess(false);
+
+    try {
+      // Initialize EmailJS with your public key
+      emailjs.init(EMAILJS_CONFIG.publicKey);
+
+      // Prepare template parameters
+      const templateParams = {
+        ...EMAIL_TEMPLATE_PARAMS,
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        reply_to: formData.email
+      };
+
+      // Send email
+      const result = await emailjs.send(
+        EMAILJS_CONFIG.serviceId, 
+        EMAILJS_CONFIG.templateId, 
+        templateParams
+      );
+      
+      console.log('Email sent successfully:', result);
+      
+      // Reset form and show success
+      setFormData({ name: '', email: '', message: '' });
+      setShowSuccess(true);
+      setTimeout(() => setShowSuccess(false), 5000);
+      
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setShowError(true);
+      setTimeout(() => setShowError(false), 5000);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -199,13 +237,22 @@ const Contact = () => {
                 <div className="input-highlight"></div>
               </div>
 
-              <button type="submit" className="submit-btn">
-                <span className="btn-text">Send Message</span>
+              <button type="submit" className={`submit-btn ${isLoading ? 'loading' : ''}`} disabled={isLoading}>
+                <span className="btn-text">
+                  {isLoading ? 'Sending...' : 'Send Message'}
+                </span>
                 <span className="btn-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <line x1="22" y1="2" x2="11" y2="13"/>
-                    <polygon points="22,2 15,22 11,13 2,9 22,2"/>
-                  </svg>
+                  {isLoading ? (
+                    <svg className="spinner" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                      <circle cx="12" cy="12" r="10" strokeWidth="2"/>
+                      <path d="M12 2a10 10 0 0 1 10 10" strokeWidth="2"/>
+                    </svg>
+                  ) : (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                      <line x1="22" y1="2" x2="11" y2="13"/>
+                      <polygon points="22,2 15,22 11,13 2,9 22,2"/>
+                    </svg>
+                  )}
                 </span>
                 <div className="btn-glow"></div>
               </button>
@@ -226,6 +273,23 @@ const Contact = () => {
             </div>
             <h3>Message Sent Successfully! 🎉</h3>
             <p>Thank you for reaching out! I'll get back to you soon.</p>
+          </div>
+        </div>
+      )}
+
+      {/* Error Popup */}
+      {showError && (
+        <div className="error-popup">
+          <div className="error-content">
+            <div className="error-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="15" y1="9" x2="9" y2="15"/>
+                <line x1="9" y1="9" x2="15" y2="15"/>
+              </svg>
+            </div>
+            <h3>Failed to Send Message 😔</h3>
+            <p>There was an error sending your message. Please try again or contact me directly at suryansh1885@gmail.com</p>
           </div>
         </div>
       )}
