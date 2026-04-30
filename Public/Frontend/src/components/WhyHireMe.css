@@ -1,7 +1,7 @@
 /* Why Hire Me Section */
 .why-hire-me {
   padding: 8rem 0;
-  background: linear-gradient(180deg, rgba(15, 15, 35, 0.9) 0%, rgba(25, 25, 55, 0.95) 50%, rgba(15, 15, 35, 0.9) 100%);
+  background: linear-gradient(180deg, var(--bg-2), var(--bg));
   position: relative;
   overflow: hidden;
 }
@@ -14,9 +14,8 @@
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 20% 20%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(240, 147, 251, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 60%, rgba(67, 233, 123, 0.05) 0%, transparent 50%);
+    radial-gradient(circle at 20% 20%, rgba(203, 213, 225, 0.06) 0%, transparent 55%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.04) 0%, transparent 55%);
   pointer-events: none;
 }
 
@@ -37,7 +36,7 @@
   font-size: 3rem;
   font-weight: 800;
   margin-bottom: 1.5rem;
-  color: white;
+  color: var(--text-1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,17 +55,14 @@
 
 .section-subtitle {
   font-size: 1.3rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-2);
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
 }
 
 .highlight {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--accent);
   font-weight: 600;
 }
 
@@ -84,8 +80,8 @@
   align-items: center;
   gap: 1rem;
   padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--surface-1);
+  border: 1px solid var(--border-1);
   border-radius: 20px;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
@@ -100,15 +96,16 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
   transition: left 0.6s ease;
+  pointer-events: none;
 }
 
 .stat-card:hover {
   transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(102, 126, 234, 0.3);
-  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+  background: var(--surface-2);
+  border-color: var(--border-2);
+  box-shadow: var(--shadow-sm);
 }
 
 .stat-card:hover::before {
@@ -132,13 +129,13 @@
 .stat-number {
   font-size: 2rem;
   font-weight: 800;
-  color: white;
+  color: var(--text-1);
   line-height: 1;
 }
 
 .stat-label {
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--muted);
   font-weight: 500;
 }
 
@@ -152,8 +149,8 @@
 
 .benefit-card {
   padding: 2.5rem 2rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--surface-1);
+  border: 1px solid var(--border-1);
   border-radius: 25px;
   backdrop-filter: blur(15px);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -169,10 +166,11 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: var(--gradient);
+  background: rgba(203, 213, 225, 0.85);
   transform: scaleX(0);
   transition: transform 0.4s ease;
   transform-origin: left;
+  opacity: 0.55;
 }
 
 .benefit-card:hover::before,
@@ -183,9 +181,9 @@
 .benefit-card:hover,
 .benefit-card.active {
   transform: translateY(-10px);
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  background: var(--surface-2);
+  border-color: var(--border-2);
+  box-shadow: var(--shadow-md);
 }
 
 .benefit-glow {
@@ -194,7 +192,7 @@
   left: 50%;
   width: 200%;
   height: 200%;
-  background: var(--gradient);
+  background: rgba(203, 213, 225, 0.35);
   border-radius: 50%;
   opacity: 0;
   transform: translate(-50%, -50%) scale(0);
@@ -228,13 +226,13 @@
 .benefit-title {
   font-size: 1.4rem;
   font-weight: 700;
-  color: white;
+  color: var(--text-1);
   margin: 0;
 }
 
 .benefit-description {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-2);
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
@@ -252,13 +250,13 @@
 }
 
 .feature-check {
-  color: #43e97b;
+  color: rgba(203, 213, 225, 0.9);
   font-weight: bold;
   font-size: 1.1rem;
 }
 
 .feature-text {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text-2);
   font-size: 0.9rem;
   font-weight: 500;
 }
@@ -270,8 +268,8 @@
   gap: 4rem;
   align-items: center;
   padding: 3rem;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(240, 147, 251, 0.1) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--surface-1);
+  border: 1px solid var(--border-1);
   border-radius: 30px;
   backdrop-filter: blur(20px);
   position: relative;
@@ -287,6 +285,7 @@
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
   animation: ctaShimmer 3s infinite;
+  pointer-events: none;
 }
 
 @keyframes ctaShimmer {
@@ -301,13 +300,13 @@
 .cta-title {
   font-size: 2.2rem;
   font-weight: 700;
-  color: white;
+  color: var(--text-1);
   margin-bottom: 1rem;
 }
 
 .cta-subtitle {
   font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-2);
   line-height: 1.6;
   margin-bottom: 2rem;
 }
@@ -333,26 +332,26 @@
 }
 
 .btn-primary.cta-btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  background: rgba(203, 213, 225, 0.92);
+  color: rgba(10, 12, 16, 0.95);
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-primary.cta-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+  box-shadow: var(--shadow-md);
 }
 
 .btn-secondary.cta-btn {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: var(--surface-1);
+  color: var(--text-1);
+  border: 1px solid var(--border-1);
 }
 
 .btn-secondary.cta-btn:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--surface-2);
   transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-md);
 }
 
 .btn-icon {

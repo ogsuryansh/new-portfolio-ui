@@ -82,6 +82,11 @@ const Hero = () => {
     }, 1000);
   };
 
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
 
 
 
@@ -129,14 +134,14 @@ const Hero = () => {
         </p>
 
         <div className="hero-cta">
-          <button className="btn btn-primary">
+          <button className="btn btn-primary" onClick={() => scrollToSection('projects')}>
             <span>View Projects</span>
             <svg className="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <path d="M5 12h14m-7-7l7 7-7 7"/>
             </svg>
           </button>
           
-          <button className="btn btn-secondary">
+          <button className="btn btn-secondary" onClick={() => scrollToSection('contact')}>
             <span>Contact Me</span>
             <svg className="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <path d="M21 8.5l-9 5.5-9-5.5V7l9 5.5L21 7v1.5z"/>

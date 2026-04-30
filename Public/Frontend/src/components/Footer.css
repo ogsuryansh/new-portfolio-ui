@@ -1,10 +1,10 @@
 /* Footer */
 .footer {
-  background: linear-gradient(180deg, rgba(5, 5, 15, 1) 0%, rgba(2, 2, 8, 1) 100%);
+  background: linear-gradient(180deg, var(--bg), #07090d);
   padding: 4rem 0 0;
   position: relative;
   overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--border-1);
 }
 
 /* Footer Background */
@@ -27,7 +27,7 @@
 .footer-shape {
   position: absolute;
   border-radius: 50%;
-  background: linear-gradient(45deg, rgba(102, 126, 234, 0.05), rgba(240, 147, 251, 0.05));
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
   animation: footerFloat 8s ease-in-out infinite;
 }
 
@@ -52,7 +52,7 @@
 }
 
 .footer-content {
-  color: white;
+  color: var(--text-1);
 }
 
 /* Footer Main */
@@ -79,27 +79,19 @@
   width: 50px;
   height: 50px;
   border-radius: 12px;
-  animation: logoGlow 3s ease-in-out infinite;
-}
-
-@keyframes logoGlow {
-  0%, 100% { box-shadow: 0 0 20px rgba(102, 126, 234, 0.3); }
-  50% { box-shadow: 0 0 30px rgba(102, 126, 234, 0.6); }
+  border: 1px solid var(--border-1);
 }
 
 .brand-name {
   font-size: 1.8rem;
   font-weight: 700;
-  color: white;
+  color: var(--text-1);
   margin: 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  letter-spacing: -0.3px;
 }
 
 .brand-tagline {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-2);
   font-size: 1rem;
   line-height: 1.5;
   margin: 0;
@@ -115,7 +107,7 @@
 .footer-column h4 {
   font-size: 1.2rem;
   font-weight: 600;
-  color: white;
+  color: var(--text-1);
   margin-bottom: 1.5rem;
   position: relative;
 }
@@ -127,8 +119,9 @@
   left: 0;
   width: 30px;
   height: 2px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: rgba(203, 213, 225, 0.85);
   border-radius: 1px;
+  opacity: 0.4;
 }
 
 .footer-column ul {
@@ -142,7 +135,7 @@
 }
 
 .footer-column ul li a {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-2);
   text-decoration: none;
   font-size: 0.95rem;
   transition: all 0.3s ease;
@@ -154,7 +147,7 @@
   content: '▶';
   position: absolute;
   left: 0;
-  color: rgba(102, 126, 234, 0.6);
+  color: rgba(203, 213, 225, 0.5);
   font-size: 0.7rem;
   transition: all 0.3s ease;
   transform: translateX(-5px);
@@ -162,7 +155,7 @@
 }
 
 .footer-column ul li a:hover {
-  color: white;
+  color: var(--text-1);
   padding-left: 1.5rem;
 }
 
@@ -185,9 +178,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.7);
+  background: var(--surface-1);
+  border: 1px solid var(--border-1);
+  color: var(--text-2);
   text-decoration: none;
   transition: all 0.3s ease;
   position: relative;
@@ -203,6 +196,7 @@
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   transition: left 0.6s ease;
+  pointer-events: none;
 }
 
 .footer-social-link:hover::before {
@@ -217,42 +211,42 @@
 }
 
 .footer-social-link.telegram:hover {
-  background: rgba(0, 136, 204, 0.2);
-  border-color: rgba(0, 136, 204, 0.4);
-  color: #0088cc;
+  background: var(--accent-weak);
+  border-color: var(--border-2);
+  color: var(--text-1);
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 136, 204, 0.3);
+  box-shadow: var(--shadow-sm);
 }
 
 .footer-social-link.instagram:hover {
-  background: rgba(225, 48, 108, 0.2);
-  border-color: rgba(225, 48, 108, 0.4);
-  color: #e1306c;
+  background: var(--accent-weak);
+  border-color: var(--border-2);
+  color: var(--text-1);
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(225, 48, 108, 0.3);
+  box-shadow: var(--shadow-sm);
 }
 
 .footer-social-link.github:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.4);
-  color: white;
+  background: var(--accent-weak);
+  border-color: var(--border-2);
+  color: var(--text-1);
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow-sm);
 }
 
 .footer-social-link.email:hover {
-  background: rgba(102, 126, 234, 0.2);
-  border-color: rgba(102, 126, 234, 0.4);
-  color: #667eea;
+  background: var(--accent-weak);
+  border-color: var(--border-2);
+  color: var(--text-1);
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+  box-shadow: var(--shadow-sm);
 }
 
 /* Footer Divider */
 .footer-divider {
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.16), transparent);
   margin: 2rem 0;
   position: relative;
 }
@@ -264,7 +258,7 @@
   left: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(203, 213, 225, 0.22), transparent);
   animation: dividerGlow 3s ease-in-out infinite;
 }
 
@@ -284,7 +278,7 @@
 }
 
 .footer-left p {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--muted);
   margin: 0;
 }
 
@@ -293,7 +287,7 @@
 }
 
 .made-with-love {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-2);
   margin: 0;
   display: flex;
   align-items: center;
@@ -382,19 +376,19 @@
 
 .tech-item {
   padding: 0.3rem 0.8rem;
-  background: rgba(102, 126, 234, 0.1);
-  border: 1px solid rgba(102, 126, 234, 0.2);
+  background: var(--surface-1);
+  border: 1px solid var(--border-1);
   border-radius: 15px;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-2);
   font-size: 0.8rem;
   font-weight: 500;
   transition: all 0.3s ease;
 }
 
 .tech-item:hover {
-  background: rgba(102, 126, 234, 0.2);
-  border-color: rgba(102, 126, 234, 0.4);
-  color: white;
+  background: var(--accent-weak);
+  border-color: var(--border-2);
+  color: var(--text-1);
   transform: translateY(-2px);
 }
 

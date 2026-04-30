@@ -1,8 +1,8 @@
 /* Skills Section */
 .skills {
   padding: 100px 0;
-  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
-  color: white;
+  background: linear-gradient(180deg, var(--bg-2), var(--bg));
+  color: var(--text-1);
   position: relative;
   width: 100%;
 }
@@ -22,10 +22,7 @@
   font-size: clamp(2rem, 4vw, 2.8rem);
   font-weight: 800;
   margin-bottom: 0.8rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-1);
   position: relative;
 }
 
@@ -37,13 +34,14 @@
   transform: translateX(-50%);
   width: 60px;
   height: 4px;
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: rgba(203, 213, 225, 0.85);
   border-radius: 2px;
+  opacity: 0.35;
 }
 
 .section-subtitle {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-2);
   max-width: 450px;
   margin: 0 auto;
   line-height: 1.5;
@@ -57,10 +55,10 @@
 }
 
 .skill-category {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--surface-1);
   padding: 2rem;
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-1);
   backdrop-filter: blur(10px);
 }
 
@@ -69,10 +67,7 @@
   font-weight: 700;
   margin-bottom: 1.5rem;
   text-align: center;
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-1);
 }
 
 .skills-grid {
@@ -86,13 +81,13 @@
   align-items: center;
   gap: 1rem;
   padding: 1rem;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.02);
   border-radius: 12px;
   transition: all 0.3s ease;
 }
 
 .skill-item:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--surface-2);
   transform: translateX(5px);
 }
 
@@ -100,7 +95,7 @@
   width: 50px;
   height: 50px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--surface-2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -136,8 +131,8 @@
   bottom: 110%;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.9);
-  color: white;
+  background: rgba(0, 0, 0, 0.85);
+  color: var(--text-1);
   padding: 0.5rem 1rem;
   border-radius: 8px;
   font-size: 0.8rem;
@@ -146,7 +141,7 @@
   visibility: hidden;
   transition: all 0.3s ease;
   z-index: 100;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--border-1);
   backdrop-filter: blur(10px);
 }
 
@@ -157,7 +152,7 @@
   left: 50%;
   transform: translateX(-50%);
   border: 5px solid transparent;
-  border-top-color: rgba(0, 0, 0, 0.9);
+  border-top-color: rgba(0, 0, 0, 0.85);
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
@@ -183,19 +178,19 @@
 .skill-name {
   font-size: 1rem;
   font-weight: 600;
-  color: white;
+  color: var(--text-1);
 }
 
 .skill-percentage {
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--muted);
   font-weight: 500;
 }
 
 .skill-bar {
   width: 100%;
   height: 8px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.10);
   border-radius: 4px;
   overflow: hidden;
   position: relative;
@@ -203,7 +198,7 @@
 
 .skill-progress {
   height: 100%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: rgba(203, 213, 225, 0.85);
   border-radius: 4px;
   transition: width 1s ease-in-out;
   position: relative;
@@ -216,8 +211,9 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
   animation: shimmer 2s infinite;
+  pointer-events: none;
 }
 
 @keyframes shimmer {
@@ -229,9 +225,9 @@
 .learning-section {
   margin: 4rem 0;
   padding: 2.5rem;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  background: var(--surface-1);
   border-radius: 25px;
-  border: 1px solid rgba(102, 126, 234, 0.2);
+  border: 1px solid var(--border-1);
   backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
@@ -244,8 +240,9 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
   animation: learningShimmer 3s infinite;
+  pointer-events: none;
 }
 
 @keyframes learningShimmer {
@@ -258,7 +255,7 @@
   font-weight: 700;
   margin-bottom: 2rem;
   text-align: center;
-  color: white;
+  color: var(--text-1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -284,19 +281,19 @@
 }
 
 .learning-item {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--surface-1);
   padding: 1.5rem;
   border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-1);
   transition: all 0.3s ease;
   position: relative;
 }
 
 .learning-item:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--surface-2);
   transform: translateY(-5px);
-  border-color: rgba(102, 126, 234, 0.3);
-  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+  border-color: var(--border-2);
+  box-shadow: var(--shadow-sm);
 }
 
 .learning-header {
@@ -323,32 +320,30 @@
 .learning-name {
   font-size: 1.1rem;
   font-weight: 600;
-  color: white;
+  color: var(--text-1);
   margin: 0 0 0.25rem 0;
 }
 
 .learning-lang {
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
-  background: rgba(102, 126, 234, 0.2);
+  color: var(--text-2);
+  background: var(--surface-1);
   padding: 0.2rem 0.6rem;
   border-radius: 10px;
   font-weight: 500;
+  border: 1px solid var(--border-1);
 }
 
 .learning-progress-text {
   font-size: 1rem;
   font-weight: 600;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-1);
 }
 
 .learning-progress-bar {
   width: 100%;
   height: 6px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.10);
   border-radius: 3px;
   overflow: hidden;
   position: relative;
@@ -356,7 +351,7 @@
 
 .learning-progress-fill {
   height: 100%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: rgba(203, 213, 225, 0.85);
   border-radius: 3px;
   transition: width 1.5s ease-out;
   position: relative;
@@ -369,8 +364,9 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
   animation: progressShimmer 2s infinite;
+  pointer-events: none;
 }
 
 @keyframes progressShimmer {
@@ -382,9 +378,9 @@
 .tech-showcase {
   margin-top: 4rem;
   padding: 3rem 2rem;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(102, 126, 234, 0.03) 100%);
+  background: var(--surface-1);
   border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-1);
   position: relative;
   overflow: hidden;
 }
@@ -396,8 +392,9 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.05), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
   animation: techShimmer 4s infinite;
+  pointer-events: none;
 }
 
 @keyframes techShimmer {
@@ -410,7 +407,7 @@
   font-weight: 700;
   margin-bottom: 3rem;
   text-align: center;
-  color: white;
+  color: var(--text-1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -434,10 +431,10 @@
 }
 
 .tech-category-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--surface-1);
   padding: 2rem 1.5rem;
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-1);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -450,17 +447,18 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+  background: rgba(203, 213, 225, 0.85);
   transform: scaleX(0);
   transition: transform 0.3s ease;
   transform-origin: left;
+  opacity: 0.55;
 }
 
 .tech-category-card:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--surface-2);
   transform: translateY(-8px);
-  border-color: rgba(102, 126, 234, 0.3);
-  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
+  border-color: var(--border-2);
+  box-shadow: var(--shadow-md);
 }
 
 .tech-category-card:hover::before {
@@ -471,7 +469,7 @@
   font-size: 1.3rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  color: white;
+  color: var(--text-1);
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -495,12 +493,12 @@
 
 .tech-item {
   padding: 0.6rem 1.2rem;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
+  background: var(--surface-1);
+  color: var(--text-2);
   border-radius: 20px;
   font-size: 0.9rem;
   font-weight: 500;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--border-1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   position: relative;
@@ -519,10 +517,10 @@
 }
 
 .tech-item:hover {
-  background: rgba(102, 126, 234, 0.3);
-  border-color: rgba(102, 126, 234, 0.5);
+  background: var(--accent-weak);
+  border-color: var(--border-2);
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.25);
+  box-shadow: var(--shadow-sm);
 }
 
 .tech-item:hover::before {
@@ -530,8 +528,8 @@
 }
 
 .tech-item.dsa-tech {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
-  border: 1px solid rgba(102, 126, 234, 0.4);
+  background: var(--surface-2);
+  border: 1px solid var(--border-2);
   position: relative;
 }
 
@@ -545,9 +543,9 @@
 }
 
 .tech-item.dsa-tech:hover {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.4) 0%, rgba(118, 75, 162, 0.4) 100%);
-  border-color: rgba(102, 126, 234, 0.6);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  background: rgba(255, 255, 255, 0.10);
+  border-color: var(--border-2);
+  box-shadow: var(--shadow-sm);
 }
 
 /* Responsive Design */
